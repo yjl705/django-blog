@@ -41,7 +41,11 @@ def detail(request, pk):
 
     return render(request, 'blog/detail.html', context={'post': post})
 
+class ArchiveView(IndexView):
+    def get_queryset(self):
 
+        return super(CategoryView, self).get_queryset().filter(created_time__year=year,
+                                    created_time__month=month).order_by('-created_time')
 def archive(request, year, month):
     post_list = Post.objects.filter(created_time__year=year,
                                     created_time__month=month
