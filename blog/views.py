@@ -10,6 +10,12 @@ from .models import Post, Category, Tag
 import re
 from django.utils.text import slugify
 from markdown.extensions.toc import TocExtension
+from django.views.generic import ListView
+
+class IndexView(ListView):
+    model = Post
+    template_name = 'blog/index.html'
+    context_object_name = 'post_list'
 
 def index(request):
     post_list = Post.objects.all().order_by('-created_time')
