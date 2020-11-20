@@ -55,6 +55,8 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag, verbose_name='Tag', blank=True)
     
     author = models.ForeignKey(User, verbose_name='Author', on_delete=models.CASCADE) #文章作者，User是django已经写好的用户模型
+    # 新增 views 字段记录阅读量
+    views = models.PositiveIntegerField(default=0, editable=False)
 
     class Meta:
         verbose_name = 'Article'
@@ -68,3 +70,7 @@ class Post(models.Model):
     # 记得从 django.urls 中导入 reverse 函数
     def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'pk': self.pk})
+
+    def increase_views(self):
+        self.views += 1
+        self.save(update_fields=['views'])

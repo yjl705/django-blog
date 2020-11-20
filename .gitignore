@@ -1,6 +1,6 @@
 _credentials.py
 
-db.sqlite3
+*sqlite3
 
 Pipfile
 Pipfile.lock
