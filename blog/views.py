@@ -44,7 +44,7 @@ def detail(request, pk):
 class ArchiveView(IndexView):
     def get_queryset(self):
 
-        return super(CategoryView, self).get_queryset().filter(created_time__year=year,
+        return super(ArchiveView, self).get_queryset().filter(created_time__year=year,
                                     created_time__month=month).order_by('-created_time')
 def archive(request, year, month):
     post_list = Post.objects.filter(created_time__year=year,
@@ -74,7 +74,10 @@ def author(request, pk):
     return render(request, 'blog/index.html', context={'post': post_list})
     return HttpResponse('<h1>hello world</h1>')
 
-
+class TagView(IndexView):
+    def get_queryset(self):
+        t = get_object_or_404(Tag, pk=pk)
+        return super(TagView, self).get_queryset().filter(tags=t).order_by('-created_time')
 def tag(request, pk):
     t = get_object_or_404(Tag, pk=pk)
     post_list = Post.objects.filter(tags=t).order_by('-created_time')
