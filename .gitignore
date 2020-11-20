@@ -2,3 +2,6 @@ _credentials.py
 
 db.sqlite3
 
+Pipfile
+Pipfile.lock
+
