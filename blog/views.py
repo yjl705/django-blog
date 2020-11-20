@@ -76,7 +76,7 @@ def author(request, pk):
 
 class TagView(IndexView):
     def get_queryset(self):
-        t = get_object_or_404(Tag, pk=pk)
+        t = get_object_or_404(Tag, pk=self.kwargs.get('pk'))
         return super(TagView, self).get_queryset().filter(tags=t).order_by('-created_time')
 def tag(request, pk):
     t = get_object_or_404(Tag, pk=pk)
