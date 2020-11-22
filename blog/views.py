@@ -11,7 +11,7 @@ import re
 from django.utils.text import slugify
 from markdown.extensions.toc import TocExtension
 from django.views.generic import ListView, DetailView
-from django-pure-pagination.mixins import PaginationMixin
+from pure-pagination.mixins import PaginationMixin
 
 class IndexView(PaginationMixin, ListView):
     model = Post
