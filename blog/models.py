@@ -37,7 +37,7 @@ class Post(models.Model):
     
     #created_time = models.DateTimeField('Created_time', default=timezone.now) #分别表示文章的创建时间和最后一次修改时间
     created_time = models.DateTimeField('Created_time', default=timezone.now)
-    modified_time = models.DateTimeField('Modified_time')
+    modified_time = models.DateTimeField('Modified_time', default=timezone.now)
 
     def save(self, *args, **kwargs):
         self.modified_time = timezone.now()
