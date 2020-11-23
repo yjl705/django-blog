@@ -1,4 +1,5 @@
 from django.urls import path
+from blog.feeds import AllPostsRssFeed
 
 from . import views
 
@@ -9,7 +10,8 @@ urlpatterns = [
     path('archives/<int:year>/<int:month>/', views.ArchiveView.as_view(), name='archive'),
     path('categories/<int:pk>/', views.CategoryView.as_view(), name='category'),
     path('tags/<int:pk>/', views.TagView.as_view(), name='tag'),
-    path('authors/<int:pk>/', views.author, name='author')
+    path('authors/<int:pk>/', views.author, name='author'),
+    path('all/rss/', AllPostsRssFeed(), name='rss'),
 ]
 
 
