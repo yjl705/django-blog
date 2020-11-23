@@ -92,7 +92,8 @@ class Post(models.Model):
         self.views += 1
         self.save(update_fields=['views'])
 
-    @cached_property
+    #@cached_property
+    @property
     def rich_content(self):
         return generate_rich_content(self.body)
 
