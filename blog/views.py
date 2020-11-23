@@ -82,7 +82,8 @@ class PostDetailView(DetailView):
 
 class ArchiveView(IndexView):
     def get_queryset(self):
-
+        year = self.kwargs.get("year")
+        month = self.kwargs.get("month")
         return super(ArchiveView, self).get_queryset().filter(created_time__year=year,
                                     created_time__month=month).order_by('-created_time')
 '''def archive(request, year, month):
