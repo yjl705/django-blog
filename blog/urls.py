@@ -12,6 +12,7 @@ urlpatterns = [
     path('tags/<int:pk>/', views.TagView.as_view(), name='tag'),
     path('authors/<int:pk>/', views.author, name='author'),
     path('all/rss/', AllPostsRssFeed(), name='rss'),
+    path('search/', views.search, name='search'),
 ]
 
 
