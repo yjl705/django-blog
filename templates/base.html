@@ -87,9 +87,9 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="HOME">HOME</a></li>
-                            <li class="cl-effect-11"><a href="full-width.html" data-hover="BLOG">BLOG</a></li>
-                            <li class="cl-effect-11"><a href="about.html" data-hover="ABOUT">ABOUT</a></li>
-                            <li class="cl-effect-11"><a href="contact.html" data-hover="CONTACT">CONTACT</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="BLOG">BLOG</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog:about' %}" data-hover="ABOUT">ABOUT</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog:contact' %}" data-hover="CONTACT">CONTACT</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -160,9 +160,9 @@
     <nav>
         <ul>
             <li><a href="{% url 'blog:index' %}">HOME</a></li>
-            <li><a href="full-width.html">BLOG</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="{% url 'blog:index' %}">BLOG</a></li>
+            <li><a href="{% url 'blog:about' %}">ABOUT</a></li>
+            <li><a href="{% url 'blog:contact' %}">CONTACT</a></li>
         </ul>
     </nav>
 </div>

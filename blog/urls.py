@@ -13,6 +13,9 @@ urlpatterns = [
     path('authors/<int:pk>/', views.author, name='author'),
     path('all/rss/', AllPostsRssFeed(), name='rss'),
     path('search/', views.search, name='search'),
+    #path('full-width.html',views.IndexView.as_view(), name='index'),
+    path('about', views.about, name='about'),
+    path('contact',views.contact, name='contact'),
 ]
 
 

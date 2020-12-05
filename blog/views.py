@@ -33,6 +33,12 @@ class IndexView(PaginationMixin, ListView):
     # 指定 paginate_by 属性后开启分页功能，其值代表每一页包含多少篇文章
     paginate_by = 10
 
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
 def index(request):
     post_list = Post.objects.all().order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list':post_list})
